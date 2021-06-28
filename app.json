@@ -1,9 +1,9 @@
 {
-  "name": "MisakiMusic",
+  "name": "LoungeMusic",
   "logo": "https://telegra.ph/file/810ec0867be11dd1ed348.png",
   "description": "Telegram'ınızın Grup Sesli Sohbetinde şarkı çalmak için Açık Kaynak botu. MisakiDev tarafından desteklenmektedir.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/ByMisakiMey/MisakiMusicBOT",
+  "repository": "https:/github.com//MisakiMusicBOT",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
