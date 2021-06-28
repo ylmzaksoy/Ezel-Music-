@@ -1,8 +1,8 @@
-<h1 align="centre">MisakiMusic 🎵</h1>
+<h1 align="centre">LoungeMusic 🎵</h1>
 
 ### Telegram grubunun sesli Sohbetinde müzik çalabilen bir bot
 
-### Bu music botunun 1. Versionu [MisakiMusic]
+### Bu music botunun 1. Versionu [LoungeMusic]
 
 <p align="center">
   <img src="">
@@ -14,12 +14,12 @@
 Heroku'ya dağıtmaya tıklamadan önce çatalı ve hemen altındaki yıldıza tıklayın.
 
 <p align="center">
-  <a href="https://github.com/ByMisakiMey/MisakiMusicBot/fork">
+  <a href="https://github.com/bodrumlu48/MisakiMusicBot/fork">
     <img src="https://img.shields.io/github/forks/ByMisakiMey/MisakiMusicBot?label=Fork&style=social">
     
   </a>
   <a href="https://github.com/matesa/MisakiMusicBot">
-    <img src="https://img.shields.io/github/stars/ByMisakiMey/MisakiMusicBot?style=social">
+    <img src="https://img.shields.io/github/stars/bodrumlu48/MisakiMusicBot?style=social">
   </a>
 </p>
 
