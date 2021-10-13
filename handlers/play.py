@@ -716,8 +716,8 @@ async def jiosaavn(client: Client, message_: Message):
                           except Exception as e:
                               #print(e)
                               await lel.edit(
-                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} nedeniyle userbot ağır isteklerine gruba katılmak olamazdı! emin kullanıcı grubunda yasaklı olmadığından emin olun."
-                                  "\n\nVeya @MisakiUserBot'u Grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
+                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} nedeniyle userbot ağır isteklerine gruba katılmak Olamazdı! Emin Kullanıcı Grubunda Yasaklı Olmadığından Emin Olun."
+                                  "\n\nVeya @EzelAssistant'u Grubunuza Manuel Olarak Ekleyin Ve Tekrar Deneyin</b>",
                               )
                               pass
     try:
@@ -725,7 +725,7 @@ async def jiosaavn(client: Client, message_: Message):
         #lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            "<i> Yardımcı Kullanıcı botu bu sohbette yok, Yöneticiden ilk kez komut göndermesini /play veya asistanı manuel olarak eklemesini isteyin</i>"
+            "<i> Yardımcı Kullanıcı Botu Bu Sohbette Yok, Yöneticiden İlk Kez Komut Göndermesini /play Veya Asistanı Manuel Olarak Eklemesini İsteyin</i>"
         )
         return     
     requested_by = message_.from_user.first_name
@@ -747,7 +747,7 @@ async def jiosaavn(client: Client, message_: Message):
         sduration = int(r[0]["duration"])
     except Exception as e:
         await res.edit(
-            "Ne demek istedini anlamadım bilader..."
+            "Ne Demek İstediğinizi Anlamadım."
         )
         print(str(e))
         is_playing = False
@@ -760,8 +760,8 @@ async def jiosaavn(client: Client, message_: Message):
              ],                     
              [
                InlineKeyboardButton(
-                   text="Müzik kanalıma katılın",
-                   url='https://t.me/Fmsarkilar')
+                   text="👥 Support ",
+                   url='https://t.me/ezelhome')
              ],
              [       
                InlineKeyboardButton(
@@ -785,12 +785,12 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"♪ MisakiMusic ♪=#️⃣ {position} konumunda sıraya alındı",
+            caption=f"♪ EzelMusicBot ♪=#️⃣ {position} Konumunda Sıraya Alındı",
         
         )           
            
     else:
-        await res.edit_text("♪ MisakiMusic ♪=▶️ Çalıyor .....")
+        await res.edit_text("♪ EzelMusicBot ♪=▶️ Çalıyor .....")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
