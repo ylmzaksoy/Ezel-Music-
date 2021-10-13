@@ -32,32 +32,32 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Önce beni grubunuzun yöneticisi olarak ekleyin</b>",
+            "<b>Öncelikle Beni Grubun Yöneticisi Olarak Ekleyin.</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "MisakiMusic"
+        user.first_name =  "@EzelMusicBot"
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id,"İstediğiniz gibi buraya katıldım")
+        await USER.send_message(message.chat.id,"Emrettiğiniz Gibi Buraya Geldim.")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>Yardımcı zaten sohbetinizde</b>",
+            "<b>Yardımcı Zaten Sohbetinizde</b>",
         )
         pass
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"<b>🛑 Taşkın Hata bekleyin 🛑 \n Kullanıcı {user.first_name} userbot için katılma isteklerini nedeniyle ağır şekilde gruba katılmak emin kullanıcı grubunda yasaklı olmadığından emin olun olamazdı! Make sure user is not banned in group."
-            "\n\nVeya @MisakiDJbot'u Grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
+            f"<b>🛑 Taşkın Hata bekleyin 🛑 \n Kullanıcı {user.first_name} Userbot İçin Katılma İsteklerini Nedeniyle Ağır Şekilde Gruba Katılmak Emin Kullanıcı Grubunda Yasaklı Olmadığından Emin Olun Sorun Olamazdı! "
+            "\n\nVeya @EzelMusicBot'u Grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
         )
         return
     await message.reply_text(
-            "<b>yardımcı kullanıcı botu sohbetinize katıldı</b>",
+            "<b>Asistan Botum Sohbetinize Katıldı.</b>",
         )
     
 @USER.on_message(filters.group & filters.command(["userbotleave"]))
@@ -66,7 +66,7 @@ async def rem(USER, message):
         await USER.leave_chat(message.chat.id)
     except:  
         await message.reply_text(
-            f"<b>Kullanıcı grubunuzdan ayrılamadı! Sel beklemesi olabilir."
-            "\n\nVeya beni Grubunuzdan elle atabilirsiniz</b>",
+            f"<b>Kullanıcı Grubunuzdan Ayrılamadı! Sel Beklemesi Olabilir."
+            "\n\nVeya Beni Grubunuzdan Elle Atabilirsiniz</b>",
         )
         return
