@@ -68,17 +68,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Hiçbir Şey Bulunamadı.\n\nBaşka bir anahtar işini deneyin veya belki doğru şekilde heceleyin."
+            "❌ Hiçbir Şey Bulunamadı.\n\nBaşka Bir Anahtar İşini Deneyin Veya Belki Doğru Şekilde Heceleyin."
         )
         print(str(e))
         return
-    m.edit("Şarkıyı indirme ")
+    m.edit("Şarkıyı İndirme ")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = '**🎵 Yükleyen @MisakimusicBot**'
+        rep = '**🎵 Yükleyen @EzelMusicBot**'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -270,10 +270,10 @@ def time_to_seconds(time):
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/saavn bir bağımsız değişken gerektirir.")
+        await message.reply_text("/saavn Bir Bağımsız Değişken Gerektirir.")
         return
     if is_downloading:
-        await message.reply_text("Başka bir indirme işlemi devam ediyor, bir süre sonra tekrar deneyin.")
+        await message.reply_text("Başka Bir İndirme İşlemi Devam Ediyor, Bir Süre Sonra Tekrar Deneyin.")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
@@ -306,10 +306,10 @@ async def jssong(_, message):
 async def deezsong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/deezer bir bağımsız değişken gerektirir.")
+        await message.reply_text("/deezer Bir Bağımsız Değişken Gerektirir.")
         return
     if is_downloading:
-        await message.reply_text("Başka bir indirme işlemi devam ediyor, bir süre sonra tekrar deneyin.")
+        await message.reply_text("Başka Bir İndirme İşlemi Devam Ediyor, Bir Süre Sonra Tekrar Deneyin.")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
@@ -338,7 +338,7 @@ async def deezsong(_, message):
 async def ytmusic(client,message: Message):
     global is_downloading
     if is_downloading:
-        await message.reply_text("Başka bir indirme işlemi devam ediyor, bir süre sonra tekrar deneyin.")
+        await message.reply_text("Başka Bir İndirme İşlemi Devam Ediyor, Bir Süre Sonra Tekrar Deneyin.")
         return
 
     urlissed = get_text(message)
@@ -347,7 +347,7 @@ async def ytmusic(client,message: Message):
             message.chat.id,
             f"`Youtube Sunucularından {urlissed} Alınıyor . Lütfen Bekleyin.`")
     if not urlissed:
-        await pablo.edit("Geçersiz Komut Sözdizimi, Daha Fazla Bilgi Almak İçin Lütfen Yardım Menüsüne Bakın!")
+        await pablo.edit("Geçersiz Komut Söz Dizimi, Daha Fazla Bilgi Almak İçin Lütfen Yardım Menüsüne Bakın!")
         return
     
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
@@ -383,7 +383,7 @@ async def ytmusic(client,message: Message):
 
             if duration > 8:
                 await pablo.edit(
-                    f"❌ 8 dakikadan uzun videolara izin verilmez, sağlanan video {duration} dakikadır"
+                    f"❌ 8 Dakikadan Uzun Videolara İzin Verilmez, Sağlanan Video {duration} Dakikadır"
                 )
                 is_downloading = False
                 return
