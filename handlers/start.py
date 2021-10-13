@@ -31,33 +31,33 @@ from config import BOT_NAME as bn
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b><b>Hoş geldiniz {message.from_user.first_name}!</b>
+        f"""<b><b>Hoş Geldiniz {message.from_user.first_name}!</b>
 
-<b>🎙️ MisakiMusic</b> yeni yöntemlerle</b> olabildiğince basit, gruplarınızda müzik <b>Oynatmak,</b> için tasarlanmış bir <b>as projedir</b> sesli sohbetler.
+<b>🎙️ Ezel Music Bot </b> Yeni Yöntemlerle</b> Olabildiğince Basit, Gruplarınızda Müzik <b>Oynatmak,</b> İçin Tasarlanmış Bir <b>Botum</b>.
 
-<b>❓ Nasıl kullanılır?</b>
-botun komutlarının tam listesini görmek için! » 🎛 <b>Komutlar</b> düğmesine ve Hits /help düğmesine basın <b>GoodVibesMusic!</b>""",
+<b>❓ Nasıl Kullanılır? </b>
+Boun Komutlarının Tam Listesini Görmek İçin! » 🎛 <b>Komutlar</b> Düğmesine Veya /Help Düğmesine Basın <b>EzelMusicBot!</b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "➕ Beni Grubunuza Ekleyin ➕", url="t.me/MisakiMusicbot?startgroup=true")
+                        "➕ Beni Grubunuza Ekleyin ➕", url="t.me/ezelmusicbot?startgroup=true")
                   ],[
                     InlineKeyboardButton(
-                        "🎛️ Komutlar", url="/play (ŞARKI İSMİ)"
+                        "🎛️ Komutlar", url="/play (Şarkı İsmi)"
                     ),
                     InlineKeyboardButton(
-                        "👑Sahibim👑", url="https://t.me/ByMisakiMey")
+                        "👤 Sahibim ", url="https://t.me/theezelboss")
                     ],[
                     InlineKeyboardButton(
-                        "Ana kanalımız", url="https://t.me/MisakiDev"
+                        "📢 Kanalımız ", url="https://t.me/ezelizm"
                     ),
                     InlineKeyboardButton(
-                        "Assistanım🎼", url="https://t.me/GoodVibeesMusic"
+                        "👥 Support ", url="https://t.me/EzelAssistant"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "👑Bodrumlu👑", url="https://t.me/kucukadmin"
+                        "🎼 Assistanım", url="https://t.me/EzelAssistant"
                     )]
             ]
         ),
@@ -71,12 +71,12 @@ botun komutlarının tam listesini görmek için! » 🎛 <b>Komutlar</b> düğm
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ <b>Bir YouTube videosu mu aramak istiyorsunuz?</b>",
+        "💁🏻‍♂️ <b>Bir YouTube Videosu Mu Aramak İstiyorsunuz? </b>",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Ana Kanalım🎵", url="https://t.me/MisakiDev"
+                        "👥 Support", url="https://t.me/ezelhome"
                     )
                 ],    
                 [    
@@ -98,31 +98,31 @@ async def start(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        f"""<b><u>Yararlı Komutlar!</u>
-\n/play <song name> - istediğiniz şarkıyı çalın
-/dplay <song name> - deezer aracılığıyla istediğiniz şarkıyı çalın
-/splay <song name> - jio saavn aracılığıyla istediğiniz şarkıyı çalın
-/playlist - Şimdi çalma listesini göster
-/current - Şimdi çalan göster
-/song <song name> - istediğiniz şarkıları hızlı bir şekilde indirin
-/search <query> - youtube'daki videoları ayrıntılarla arayın
-/deezer <song name> - istediğiniz şarkıları deezer ile hızlıca indirin
-/saavn <song name> - istediğiniz şarkıları saavn aracılığıyla hızlıca indirin
-/video <song name> - istediğiniz videoları hızlı bir şekilde indirin
-\n<u>Yalnızca yöneticiler</u>
-/player - müzik çalar ayarları panelini aç
-/pause - şarkı çalmayı duraklatır
-/resume - şarkıyı çalmaya devam et
-/skip - sonraki şarkıyı çal
-/end - müzik çalmayı durdur
-/userbotjoin - asistanı sohbetinize davet edin
-/admincache - Yönetici listesini yeniler
+        f"""<b><u>Komutlar!</u>
+\n/play <song name> - İstediğiniz Şarkıyı Çalın
+/dplay <song name> - Deezer Aracılığıyla İstediğiniz Şarkıyı Çalın
+/splay <song name> - Jio Saavn Aracılığıyla İstediğiniz Şarkıyı Çalın
+/playlist - Şimdi Çalma Listesini Göster
+/current - Şimdi Çalan Göster
+/song <song name> - İstediğiniz Şarkıları Hızlı Bir Şekilde İndirin
+/search <query> - Youtube'daki Videoları Ayrıntılarla Arayın
+/deezer <song name> - İstediğiniz Şarkıları Deezer İle Hızlıca İndirin
+/saavn <song name> - İstediğiniz Şarkıları Jio Saavn Aracılığıyla Hızlıca İndirin
+/video <song name> - İstediğiniz Videoları Hızlı Bir Şekilde İndirin
+\n<u>Yalnızca Yöneticiler</u>
+/player - Müzik Çalar Ayarları Panelini Aç
+/pause - Şarkı Çalmayı Duraklatır
+/resume - Şarkıyı Çalmaya Devam Et
+/skip - Sonraki Şarkıyı Çal
+/end - Müzik Çalmayı Durdur
+/userbotjoin - Asistanı Sohbetinize Davet Edin
+/admincache - Yönetici Listesini Yeniler
  </b>""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Ana Kanalım🎵", url="https://t.me/MisakiDev"
+                        "👤 Sahibim", url="https://t.me/theezelboss"
                     )
                 ]
             ]
