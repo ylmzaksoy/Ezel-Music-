@@ -13,7 +13,7 @@ async def inline(client: Client, query: InlineQuery):
         await client.answer_inline_query(
             query.id,
             results=answers,
-            switch_pm_text="Bir YouTube video adı yazın...",
+            switch_pm_text="Bir YouTube Video Adı Yazın...",
             switch_pm_parameter="help",
             cache_time=0
         )
@@ -46,6 +46,6 @@ async def inline(client: Client, query: InlineQuery):
             await query.answer(
                 results=answers,
                 cache_time=0,
-                switch_pm_text="Hata: Arama zaman aşımına uğradı",
+                switch_pm_text="Hata: Arama Zaman Aşımına Uğradı",
                 switch_pm_parameter="",
             )
