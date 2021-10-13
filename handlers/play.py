@@ -275,7 +275,7 @@ async def m_cb(b, cb):
                 ) or (
                     callsmusic.pytgcalls.active_calls[chat_id] == 'paused'
                 ):
-            await cb.answer('Sohbet bağlı değil!', show_alert=True)
+            await cb.answer('Sohbet Bağlı Değil!', show_alert=True)
         else:
             callsmusic.pytgcalls.pause_stream(chat_id)
             
@@ -289,7 +289,7 @@ async def m_cb(b, cb):
             ) or (
                 callsmusic.pytgcalls.active_calls[chat_id] == 'playing'
             ):
-                await cb.answer('Sohbet bağlı değil!', show_alert=True)
+                await cb.answer('Sohbet Bağlı Değil!', show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chat_id)
             await cb.answer('Müzik Devam Ettirildi!')
@@ -299,7 +299,7 @@ async def m_cb(b, cb):
     elif type_ == 'playlist':
         queue = que.get(cb.message.chat.id)
         if not queue:   
-            await cb.message.edit('Çalma listesi boş')
+            await cb.message.edit('Çalma Listesi Boş')
         temp = []
         for t in queue:
             temp.append(t)
@@ -316,7 +316,7 @@ async def m_cb(b, cb):
                  name = song[0]
                  usr = song[1].mention(style='md')
                  msg += f'\n- {name}'
-                 msg += f'\n- {usr} tarafından istek\n'
+                 msg += f'\n- {usr} Tarafından İstek\n'
         await cb.message.edit(msg)      
                       
     elif type_ == 'resume':     
@@ -325,7 +325,7 @@ async def m_cb(b, cb):
             ) or (
                 callsmusic.pytgcalls.active_calls[chat_id] == 'playing'
             ):
-                await cb.answer('Sohbet bağlı değil veya zaten oynatılıyor', show_alert=True)
+                await cb.answer('Sohbet Bağlı Değil Veya Zaten Oynatılıyor', show_alert=True)
         else:
             callsmusic.pytgcalls.resume_stream(chat_id)
             await cb.answer('Müzik Devam Ettirildi!')     
@@ -335,18 +335,18 @@ async def m_cb(b, cb):
                 ) or (
                     callsmusic.pytgcalls.active_calls[chat_id] == 'paused'
                 ):
-            await cb.answer('Sohbet bağlı değil veya zaten duraklatılmış', show_alert=True)
+            await cb.answer('Sohbet Bağlı Değil Veya Zaten Duraklatılmış', show_alert=True)
         else:
             callsmusic.pytgcalls.pause_stream(chat_id)
             
             await cb.answer('Müzik Duraklatıldı!')
     elif type_ == 'cls':          
-        await cb.answer('Menü kapadı')
+        await cb.answer('Menü Kapadı')
         await cb.message.delete()       
 
     elif type_ == 'menu':  
         stats = updated_stats(cb.message.chat, qeue)  
-        await cb.answer('Menü açıldı')
+        await cb.answer('Menü Açıldı')
         marr = InlineKeyboardMarkup(
             [
                 [
@@ -370,7 +370,7 @@ async def m_cb(b, cb):
         if qeue:
             skip = qeue.pop(0)
         if chat_id not in callsmusic.pytgcalls.active_calls:
-            await cb.answer('Sohbet bağlı değil!', show_alert=True)
+            await cb.answer('Sohbet Bağlı Değil!', show_alert=True)
         else:
             callsmusic.queues.task_done(chat_id)
 
@@ -422,15 +422,15 @@ async def play(_, message: Message):
                               invitelink = await _.export_chat_invite_link(chid)
                           except:
                               await lel.edit(
-                                  "<b>Önce beni grubunuzun yöneticisi olarak ekleyin</b>",
+                                  "<b>Öncelikle Beni Grubun Yöneticisi Olarak Ekleyin </b>",
                               )
                               return
 
                           try:
                               await USER.join_chat(invitelink)
-                              await USER.send_message(message.chat.id,"Bu gruba VC'de müzik çalmak için katıldım")
+                              await USER.send_message(message.chat.id,"Bu Gruba VC'de Müzik Çalmak İçin Katıldım")
                               await lel.edit(
-                                  "<b>Yardımcı Userbot sohbetinize katıldı</b>",
+                                  "<b>Yardımcı Userbot Sohbetinize Katıldı</b>",
                               )
 
                           except UserAlreadyParticipant:
@@ -438,8 +438,8 @@ async def play(_, message: Message):
                           except Exception as e:
                               #print(e)
                               await lel.edit(
-                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} nedeniyle userbot ağır isteklerine gruba katılmak olamazdı! emin kullanıcı grubunda yasaklı olmadığından emin olun."
-                                  "\n\nVeya @MisakiDJbot'u Grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
+                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} Nedeniyle Userbot Ağır İsteklerine Gruba Katılmak Olamazdı! Emin Kullanıcı Grubunda Yasaklı Olmadığından Emin Olun."
+                                  "\n\nVeya @EzelAssistant'u Grubunuza Manuel Olarak Ekleyin Ve Tekrar Deneyin</b>",
                               )
                               pass
     try:
@@ -447,7 +447,7 @@ async def play(_, message: Message):
         #lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot bu sohbette yok, Yöneticiden ilk kez komut göndermesini /play isteyin veya {user.first_name} öğesini manuel olarak ekleyin</i>"
+            f"<i> {user.first_name} Userbot Bu Sohbette Yok, Yöneticiden İlk Kez komut Göndermesini /play İsteyin Veya {user.first_name} Öğesini Manuel Olarak Ekleyin</i>"
         )
         return     
     sender_id = message.from_user.id
@@ -479,7 +479,7 @@ async def play(_, message: Message):
         views = results[0]["views"]
 
     except Exception as e:
-        await lel.edit("Şarkı bulunamadı. Başka bir şarkı deneyin veya belki doğru şekilde heceleyin.")
+        await lel.edit("Şarkı Bulunamadı. Başka Bir Şarkı Deneyin Veya Belki Doğru Şekilde Heceleyin.")
         print(str(e))
         return
 
@@ -519,7 +519,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ İstediğiniz şarkı **sıraya girdi** {position} konumunda!",
+        caption=f"#⃣ İstediğiniz Şarkı **Sıraya Girdi** {position} Konumunda!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -536,7 +536,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Oynatılıyor** Bu Grupta {} tarafından Grup Müzik Botu ile istenen şarkı çalınıyor 👨‍🎤".format(
+        caption="▶️ **Oynatılıyor** Bu Grupta {} Tarafından Grup Müzik Botu İle İstenen Şarkı Çalınıyor 👨‍🎤".format(
         message.from_user.mention()
         ),
     )
@@ -557,7 +557,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "GoodVibeesMusic"
+        user.first_name =  "EzelMusicBot"
     usar = user
     wew = usar.id
     try:
@@ -570,7 +570,7 @@ async def deezer(client: Client, message_: Message):
                               invitelink = await client.export_chat_invite_link(chid)
                           except:
                               await lel.edit(
-                                  "<b>Önce beni grubunuzun yöneticisi olarak ekleyin</b>",
+                                  "<b>Önce Beni Grubunuzun Yöneticisi Olarak Ekleyin</b>",
                               )
                               return
 
@@ -586,7 +586,7 @@ async def deezer(client: Client, message_: Message):
                           except Exception as e:
                               #print(e)
                               await lel.edit(
-                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} nedeniyle userbot ağır isteklerine gruba katılmak olamazdı! emin kullanıcı grubunda yasaklı olmadığından emin olun."
+                                  f"<b>🔴 Taşkın Hata bekleyin 🔴 \nKullanıcı {user.first_name} Nedeniyle Userbot Ağır isteklerine gruba katılmak olamazdı! emin kullanıcı grubunda yasaklı olmadığından emin olun."
                                   "\n\nVeya @MisakiUserBOt'u Grubunuza manuel olarak ekleyin ve tekrar deneyin</b>",
                               )
                               pass
